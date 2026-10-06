@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#6d4aff" />
+  <meta name="description" content="Permainan interaktif Bahasa Melayu Tahun 3 bertema pemakanan sihat." />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Dora Foodventure</title>
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <button class="icon-btn" id="homeBtn" aria-label="Kembali ke halaman utama">⌂</button>
+      <div class="brand">
+        <span class="brand-kicker">FOODVENTURE</span>
+        <strong id="brandTitle">Misi Bekal Sihat</strong>
+      </div>
+      <button class="icon-btn" id="settingsBtn" aria-label="Tetapan">⚙</button>
+    </header>
+
+    <main>
+      <section id="homeView" class="view active">
+        <div class="hero-card">
+          <div class="hero-illustration" aria-hidden="true">
+            <div class="sun"></div>
+            <div class="hill hill-a"></div>
+            <div class="hill hill-b"></div>
+            <div class="explorer">
+              <div class="head">🙂</div>
+              <div class="bag">🎒</div>
+            </div>
+            <div class="food-bubble b1">🍎</div>
+            <div class="food-bubble b2">🥕</div>
+            <div class="food-bubble b3">🥛</div>
+          </div>
+          <div class="hero-copy">
+            <p class="eyebrow">BAHASA MELAYU TAHUN 3</p>
+            <h1 id="appTitle">Dora Foodventure: Misi Bekal Sihat</h1>
+            <p id="tagline">Dengar, Pilih, Sebut dan Jelajah!</p>
+            <div class="home-actions">
+              <button class="primary" id="startBtn">▶ MULA MISI</button>
+              <button class="secondary" id="teacherBtn">🧑‍🏫 MOD GURU</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="quick-grid">
+          <button class="quick-card" id="inclusiveBtn">
+            <span class="quick-icon">♿</span>
+            <span><strong>Mod Mesra Saya</strong><small>Visual lebih jelas, kurang gangguan.</small></span>
+          </button>
+          <button class="quick-card" id="howBtn">
+            <span class="quick-icon">🧭</span>
+            <span><strong>Cara Bermain</strong><small>Dengar → pilih → sebut → dapat bintang.</small></span>
+          </button>
+          <button class="quick-card" id="audioTestBtn">
+            <span class="quick-icon">🔊</span>
+            <span><strong>Uji Audio</strong><small>Semak suara Bahasa Melayu sebelum mula.</small></span>
+          </button>
+        </div>
+      </section>
+
+      <section id="mapView" class="view">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">PETA PENGEMBARAAN</p>
+            <h2>Pilih misi seterusnya</h2>
+          </div>
+          <div class="score-pill">⭐ <span id="scoreText">0 / 5</span></div>
+        </div>
+        <div id="missionMap" class="mission-map"></div>
+      </section>
+
+      <section id="missionView" class="view">
+        <div class="mission-shell">
+          <div class="progress-row">
+            <span id="missionCounter">Misi 1 daripada 5</span>
+            <div class="progress"><div id="progressBar"></div></div>
+          </div>
+          <div class="mission-card">
+            <div class="mission-title-row">
+              <div>
+                <p class="eyebrow">MISI</p>
+                <h2 id="missionTitle">Hutan Buah</h2>
+              </div>
+              <div class="star-badge">⭐ <span id="missionScore">0</span></div>
+            </div>
+
+            <div class="instruction-box" id="instructionBox"></div>
+
+            <div class="audio-panel">
+              <button class="primary" id="listenBtn">🔊 DENGAR</button>
+              <button class="secondary" id="slowBtn">🐢 PERLAHAN</button>
+              <button class="secondary" id="repeatBtn">↻ ULANG</button>
+            </div>
+
+            <div id="promptPreview" class="prompt-preview hidden"></div>
+            <div id="options" class="options-grid"></div>
+
+            <div id="speakArea" class="speak-area hidden">
+              <button class="primary" id="recordBtn">🎙 RAKAM SUARA</button>
+              <button class="secondary hidden" id="stopRecordBtn">■ HENTIKAN</button>
+              <audio id="playback" controls class="hidden"></audio>
+              <div class="record-note">Rakaman suara digunakan untuk latihan sebutan. Tiada rakaman dihantar ke internet.</div>
+            </div>
+
+            <div id="feedback" class="feedback hidden" role="status" aria-live="polite"></div>
+
+            <div class="mission-footer">
+              <button class="ghost" id="backToMapBtn">← Peta</button>
+              <button class="primary hidden" id="nextBtn">MISI SETERUSNYA →</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="teacherView" class="view">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">MOD GURU</p>
+            <h2>Editor Kandungan Tanpa Coding</h2>
+          </div>
+          <button class="secondary" id="previewBtn">👁 Pratonton</button>
+        </div>
+
+        <div class="teacher-grid">
+          <aside class="teacher-sidebar">
+            <button class="teacher-tab active" data-tab="general">Maklumat Aktiviti</button>
+            <button class="teacher-tab" data-tab="missions">Editor Misi</button>
+            <button class="teacher-tab" data-tab="access">Inklusif & Audio</button>
+            <button class="teacher-tab" data-tab="transfer">Import / Eksport</button>
+          </aside>
+
+          <div class="teacher-panel">
+            <div class="tab-panel active" id="tab-general">
+              <label>Tajuk inovasi<input id="editTitle" type="text" /></label>
+              <label>Tagline<input id="editTagline" type="text" /></label>
+              <label>Markah lulus<input id="editPass" type="number" min="1" max="20" /></label>
+              <button class="primary" id="saveGeneralBtn">SIMPAN</button>
+            </div>
+
+            <div class="tab-panel" id="tab-missions">
+              <div id="missionEditorList"></div>
+              <button class="secondary" id="addMissionBtn">＋ TAMBAH MISI</button>
+            </div>
+
+            <div class="tab-panel" id="tab-access">
+              <label class="toggle-row"><input id="editInclusive" type="checkbox" /> <span>Aktifkan Mod Mesra Saya secara lalai</span></label>
+              <label class="toggle-row"><input id="editReduceMotion" type="checkbox" /> <span>Kurangkan animasi secara lalai</span></label>
+              <label>Kod bahasa suara<input id="editVoiceLang" type="text" value="ms-MY" /></label>
+              <p class="helper">Untuk sebutan yang benar-benar konsisten, muat naik fail audio MP3/WAV bagi setiap misi. Suara sistem hanyalah sandaran.</p>
+              <button class="primary" id="saveAccessBtn">SIMPAN</button>
+            </div>
+
+            <div class="tab-panel" id="tab-transfer">
+              <div class="transfer-card">
+                <h3>Eksport Aktiviti</h3>
+                <p>Simpan kandungan sebagai fail JSON untuk dikongsi dengan guru lain.</p>
+                <button class="primary" id="exportBtn">⬇ EKSPORT JSON</button>
+              </div>
+              <div class="transfer-card">
+                <h3>Import Aktiviti</h3>
+                <p>Pilih fail JSON yang dieksport daripada aplikasi ini.</p>
+                <input id="importInput" type="file" accept=".json,application/json" />
+              </div>
+              <button class="danger" id="resetBtn">Pulihkan kandungan asal</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="settingsDialog">
+      <form method="dialog" class="dialog-card">
+        <h3>Tetapan</h3>
+        <label class="toggle-row"><input id="inclusiveToggle" type="checkbox" /> <span>Mod Mesra Saya</span></label>
+        <label class="toggle-row"><input id="motionToggle" type="checkbox" /> <span>Kurangkan animasi</span></label>
+        <label class="toggle-row"><input id="largeTextToggle" type="checkbox" /> <span>Teks lebih besar</span></label>
+        <button class="primary">SIMPAN</button>
+      </form>
+    </dialog>
+
+    <dialog id="howDialog">
+      <form method="dialog" class="dialog-card">
+        <h3>Cara Bermain</h3>
+        <ol>
+          <li>Tekan <strong>Dengar</strong>.</li>
+          <li>Pilih gambar yang sepadan.</li>
+          <li>Dengar maklum balas.</li>
+          <li>Sebut semula ayat apabila diminta.</li>
+          <li>Kumpul sekurang-kurangnya 4 bintang.</li>
+        </ol>
+        <button class="primary">FAHAM</button>
+      </form>
+    </dialog>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
