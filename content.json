@@ -1,36 +1,37 @@
 {
-  "appTitle": "Dora Foodventure: Misi Bekal Sihat",
+  "appTitle": "Dora Foodventure",
+  "subtitle": "Misi Bekal Sihat",
   "tagline": "Dengar, Pilih, Sebut dan Jelajah!",
+  "intro": "Bantu Dora mengumpul makanan sihat untuk menyediakan bekal yang hebat!",
   "passingScore": 4,
-  "totalStars": 5,
   "settings": {
-    "standardVoiceLang": "ms-MY",
-    "allowSlowAudio": true,
-    "inclusiveModeDefault": false,
-    "reduceMotionDefault": false
+    "voiceLang": "ms-MY",
+    "voiceRate": 0.92,
+    "slowRate": 0.72
   },
   "missions": [
     {
       "id": "m1",
       "title": "Hutan Buah",
       "type": "choose",
-      "instruction": "Dengar dengan teliti. Pilih gambar yang betul.",
+      "icon": "🍎",
+      "instruction": "Dengar ayat. Kemudian pilih gambar yang sepadan.",
       "prompt": "Aina makan sebiji epal.",
-      "audioUrl": "",
+      "background": "assets/backgrounds/home-bg.png",
       "options": [
         {
           "label": "Epal",
-          "emoji": "🍎",
+          "image": "assets/foods/apple.png",
           "correct": true
         },
         {
-          "label": "Kek",
-          "emoji": "🍰",
+          "label": "Pisang",
+          "image": "assets/foods/banana.png",
           "correct": false
         },
         {
-          "label": "Kentang goreng",
-          "emoji": "🍟",
+          "label": "Lobak merah",
+          "image": "assets/foods/carrot.png",
           "correct": false
         }
       ]
@@ -38,49 +39,51 @@
     {
       "id": "m2",
       "title": "Backpack Challenge",
-      "type": "choose",
-      "instruction": "Dengar arahan. Pilih makanan untuk dimasukkan ke dalam beg.",
+      "type": "drag",
+      "icon": "🎒",
+      "instruction": "Dengar arahan. Seret makanan yang betul ke dalam Backpack.",
       "prompt": "Masukkan buah pisang ke dalam beg.",
-      "audioUrl": "",
+      "background": "assets/backgrounds/home-bg.png",
       "options": [
         {
           "label": "Pisang",
-          "emoji": "🍌",
+          "image": "assets/foods/banana.png",
           "correct": true
         },
         {
-          "label": "Donat",
-          "emoji": "🍩",
+          "label": "Epal",
+          "image": "assets/foods/apple.png",
           "correct": false
         },
         {
-          "label": "Gula-gula",
-          "emoji": "🍬",
+          "label": "Lobak merah",
+          "image": "assets/foods/carrot.png",
           "correct": false
         }
       ]
     },
     {
       "id": "m3",
-      "title": "Jambatan Makanan Sihat",
-      "type": "choose",
-      "instruction": "Dengar ayat. Pilih gambar yang sepadan untuk membina jambatan.",
+      "title": "Jambatan Sihat",
+      "type": "bridge",
+      "icon": "🌉",
+      "instruction": "Dengar ayat. Pilih minuman yang betul untuk membina jambatan.",
       "prompt": "Amir minum air kosong.",
-      "audioUrl": "",
+      "background": "assets/backgrounds/home-bg.png",
       "options": [
         {
           "label": "Air kosong",
-          "emoji": "💧",
+          "image": "assets/foods/water.png",
           "correct": true
         },
         {
-          "label": "Minuman bergas",
-          "emoji": "🥤",
+          "label": "Susu",
+          "image": "assets/foods/milk.png",
           "correct": false
         },
         {
-          "label": "Aiskrim",
-          "emoji": "🍦",
+          "label": "Jus manis",
+          "emoji": "🧃",
           "correct": false
         }
       ]
@@ -88,24 +91,25 @@
     {
       "id": "m4",
       "title": "Food Catch",
-      "type": "choose",
+      "type": "catch",
+      "icon": "🥕",
       "instruction": "Dengar arahan dan tangkap makanan yang disebut.",
       "prompt": "Tangkap lobak merah.",
-      "audioUrl": "",
+      "background": "assets/backgrounds/home-bg.png",
       "options": [
         {
           "label": "Lobak merah",
-          "emoji": "🥕",
+          "image": "assets/foods/carrot.png",
           "correct": true
         },
         {
-          "label": "Piza",
-          "emoji": "🍕",
+          "label": "Epal",
+          "image": "assets/foods/apple.png",
           "correct": false
         },
         {
-          "label": "Coklat",
-          "emoji": "🍫",
+          "label": "Pisang",
+          "image": "assets/foods/banana.png",
           "correct": false
         }
       ]
@@ -114,9 +118,10 @@
       "id": "m5",
       "title": "Speak with Dora",
       "type": "speak",
+      "icon": "🎙️",
       "instruction": "Dengar ayat. Kemudian rakam suara kamu menyebut semula ayat tersebut.",
       "prompt": "Saya makan buah setiap hari.",
-      "audioUrl": ""
+      "background": "assets/backgrounds/home-bg.png"
     }
   ]
 }

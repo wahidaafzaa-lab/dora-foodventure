@@ -3,7 +3,7 @@
   "short_name": "Foodventure",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#f5f3ff",
-  "theme_color": "#6d4aff",
+  "background_color": "#f7f4ff",
+  "theme_color": "#7542ff",
   "icons": []
 }

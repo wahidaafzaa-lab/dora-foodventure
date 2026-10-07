@@ -1,42 +1,43 @@
-# Dora Foodventure: Misi Bekal Sihat
+# Dora Foodventure 3D V2
 
-Prototaip PWA Bahasa Melayu Tahun 3 dengan:
-- 5 misi interaktif
-- audio Bahasa Melayu (suara sistem sebagai sandaran)
-- sokongan fail audio MP3/WAV melalui `audioUrl`
-- rakaman suara murid menggunakan mikrofon
-- Mod Mesra Saya
-- Mod Guru tanpa coding
-- import / eksport JSON
-- offline cache asas melalui service worker
+Versi penuh dengan visual 3D, 5 misi, Mod Guru, Mod Mesra Saya, audio ms-MY, import/eksport JSON, rakaman suara dan PWA.
 
-## Jalankan secara tempatan
-Jangan buka `index.html` terus melalui `file://` kerana `fetch`, service worker dan mikrofon mungkin disekat.
+## Fail utama
+- index.html
+- style.css
+- app.js
+- content.json
+- manifest.json
+- service-worker.js
+- assets/
 
-Cara mudah:
-```bash
-python -m http.server 8000
-```
-Kemudian buka:
-`http://localhost:8000`
-
-## Deploy ke GitHub Pages
-1. Muat naik semua fail dalam folder ini ke repository GitHub.
-2. Settings > Pages.
+## Deploy GitHub Pages
+1. Upload **semua fail dan folder** dalam projek ini ke root repository.
+2. GitHub > Settings > Pages.
 3. Source: Deploy from a branch.
-4. Branch: `main`, folder `/root`.
-5. Save.
-6. Buka URL GitHub Pages yang diberikan.
+4. Branch: main.
+5. Folder: /(root).
+6. Save dan tunggu beberapa minit.
 
-## Audio Bahasa Melayu standard
-Untuk hasil paling konsisten, rakam atau sediakan fail MP3/WAV dengan sebutan Bahasa Melayu standard.
-Letakkan fail contohnya:
-`assets/audio/misi1.mp3`
+## Penting
+Jika anda menggantikan fail tetapi laman masih menunjukkan versi lama:
+- buka Incognito, atau
+- clear site data, atau
+- ubah nama cache dalam service-worker.js.
 
-Kemudian dalam Mod Guru, isi `Fail audio (URL/path)` dengan:
-`assets/audio/misi1.mp3`
+## Audio BM standard
+Aplikasi menggunakan SpeechSynthesis dengan kod `ms-MY` sebagai sandaran.
+Untuk suara paling konsisten, masukkan fail rakaman MP3/WAV bagi setiap misi melalui Mod Guru.
 
-Jika tiada fail audio, aplikasi menggunakan `SpeechSynthesis` dengan `ms-MY` jika suara tersebut tersedia pada peranti.
-
-## Nota hak cipta
-Jika projek hendak diterbitkan secara terbuka atau dikomersialkan, gunakan watak pengembara asli dan aset yang anda miliki/berlesen, bukan aset rasmi Dora.
+## Mod Guru
+Guru boleh ubah:
+- tajuk
+- ayat
+- arahan
+- jenis misi
+- pilihan jawapan
+- imej
+- audio
+- latar
+- markah lulus
+tanpa mengubah fungsi utama permainan.
